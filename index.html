@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AIgnite Digital — Websites, Design, AI &amp; SEO</title>
+<meta name="description" content="Websites, creative design, AI automation and search optimization for individuals and businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#050612;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.11);--tx:#eef0ff;--mut:#a2a9d6;--a:#8b5cff;--g:linear-gradient(135deg,#8b5cff,#2f8bff 60%,#22d3ee);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root{color-scheme:light;--bg:#f3f4ff;--card:rgba(255,255,255,.8);--line:rgba(20,25,70,.12);--tx:#12163a;--mut:#555d8a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+h1,h2,h3,.logo{font-family:"Space Grotesk",Inter,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.32;z-index:-1;animation:fl 14s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:#8b5cff;top:-80px;left:-100px}.o2{width:380px;height:380px;background:#2f8bff;top:35%;right:-120px;animation-delay:-5s}.o3{width:320px;height:320px;background:#22d3ee;bottom:-80px;left:30%;animation-delay:-9s;opacity:.18}
+@keyframes fl{to{transform:translate(60px,50px) scale(1.15)}}
+#glow{position:fixed;width:420px;height:420px;margin:-210px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,255,.16),transparent 65%);pointer-events:none;z-index:-1}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:700;font-size:1.3rem}.logo b,.gt{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:22px;font-size:.9rem;color:var(--mut)}.links a:hover{color:var(--tx)}
+#mb{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:6px 12px;font-size:1.1rem}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.92rem;border:1px solid var(--line);transition:.25s;color:var(--tx);background:var(--card);cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-3px);border-color:var(--a);box-shadow:0 10px 30px rgba(139,92,255,.3)}
+.btn.p{background:var(--g);border:0;color:#fff}
+.si{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:.8rem;transition:.25s}
+.si:hover{background:var(--c);border-color:var(--c);color:#fff;transform:translateY(-4px) scale(1.08);box-shadow:0 8px 24px var(--c)}
+.srow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#rail{position:fixed;left:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:15}
+.hero{padding:80px 0 60px}.hg{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:99px;font-size:.82rem;color:var(--mut);margin-bottom:18px}
+.badge i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 #22c55e;animation:pl 2s infinite}@keyframes pl{70%{box-shadow:0 0 0 9px transparent}}
+h1{font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.1;margin:0 0 16px}
+.type{font-size:1.15rem;margin:0 0 14px;font-weight:600}.type span{border-right:2px solid var(--a);padding-right:3px}
+.hero p.d{color:var(--mut);max-width:560px;margin:0 0 26px}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.vis{position:relative;height:380px}
+.fc{position:absolute;padding:16px 20px;border-radius:16px;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(10px);font-weight:600;animation:up 6s ease-in-out infinite alternate;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.fc small{display:block;color:var(--mut);font-weight:400}
+@keyframes up{to{transform:translateY(-18px)}}
+.ring{position:absolute;inset:40px;border-radius:50%;border:1.5px dashed rgba(139,92,255,.5);animation:sp 40s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+.ring.r2{inset:105px;border-style:solid;border-color:var(--line);animation-direction:reverse}
+.hg .vis{height:auto;aspect-ratio:1/1;max-width:440px;width:100%;margin:0 auto}
+.core{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;font:700 2.4rem "Space Grotesk",sans-serif;color:#fff;box-shadow:0 0 60px rgba(139,92,255,.6),0 0 120px rgba(47,139,255,.35);animation:pu 3s ease-in-out infinite}@keyframes pu{50%{transform:scale(1.07)}}
+.orbit{position:absolute;inset:40px;animation:sp 28s linear infinite}
+.nd{position:absolute;transform:translate(-50%,-50%)}.nd span{display:block;white-space:nowrap;padding:9px 15px;border-radius:99px;border:1px solid rgba(255,255,255,.14);background:rgba(15,18,45,.8);backdrop-filter:blur(10px);font-weight:600;font-size:.85rem;color:#eef0ff;box-shadow:0 10px 30px rgba(0,0,0,.35);animation:sp 28s linear infinite reverse}
+.hg .fc{font-size:.85rem;padding:12px 16px;color:var(--tx)}
+@media(max-width:900px){.hg .fc{display:none}.orbit,.ring{inset:55px}.ring.r2{inset:110px}.nd span{font-size:.75rem;padding:7px 11px}.core{width:96px;height:96px;margin:-48px;font-size:2rem}}
+section{padding:70px 0}
+h2{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 8px}.sub{color:var(--mut);margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;transition:.3s;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0),rgba(139,92,255,.22),transparent 70%);opacity:0;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--a)}.card:hover::before{opacity:1}
+.card>*{position:relative}.card h3{margin:8px 0 6px;font-size:1.1rem}.card p,.card li{color:var(--mut);font-size:.92rem;margin:0}.ic{font-size:1.9rem}
+.tag{display:inline-block;font-size:.74rem;padding:2px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut);margin:8px 4px 0 0}.demo{color:#ffb454;border-color:#ffb454}
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mq div{display:flex;gap:44px;width:max-content;animation:mr 28s linear infinite;color:var(--mut);font-weight:600;font-family:"Space Grotesk",sans-serif}@keyframes mr{to{transform:translateX(-50%)}}
+.ab{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start}
+.av{width:240px;height:240px;border-radius:50%;padding:4px;background:var(--g);margin:0 auto 14px;animation:sp 12s linear infinite}
+.av div{width:100%;height:100%;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:4rem;animation:sp 12s linear infinite reverse}
+.bar{height:8px;border-radius:9px;background:var(--line);margin:4px 0 14px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--g);transition:width 1.4s}.in .bar i{width:var(--w)}
+.tl{border-left:2px solid var(--line);padding-left:18px;margin:18px 0}.tl div{margin-bottom:12px;position:relative}.tl div::before{content:"";position:absolute;left:-25px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--a)}.tl b{display:block}.tl span{color:var(--mut);font-size:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--mut);cursor:pointer;font:inherit;font-size:.85rem}.chip.on{background:var(--g);color:#fff;border-color:transparent}
+#proj{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.pc{padding:0}.card .kf{list-style:none;padding:0;margin:12px 0 0}.kf li::before{content:"✓ ";color:var(--a);font-weight:700}.pc .pb,.mb2 .pb{padding:20px}.pc h3{font-size:1.15rem;margin:4px 0 6px}
+.mk{position:relative;height:190px;background:var(--h);overflow:hidden}
+.bw{position:absolute;inset:24px 24px 0;border-radius:12px 12px 0 0;background:rgba(8,10,28,.8);border:1px solid rgba(255,255,255,.2);transition:.5s}.pc:hover .bw{transform:translateY(-8px) scale(1.03)}
+.tb{display:flex;gap:5px;padding:9px 12px}.tb i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4)}
+.ln{height:9px;border-radius:5px;background:rgba(255,255,255,.24);margin:9px 14px}.bk{display:flex;gap:8px;margin:12px 14px}.bk b{flex:1;height:46px;border-radius:8px;background:rgba(255,255,255,.15)}
+.em{position:absolute;right:16px;bottom:10px;font-size:2.5rem;filter:drop-shadow(0 6px 12px rgba(0,0,0,.45))}
+.ov{position:absolute;inset:0;background:rgba(5,6,18,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}.pc:hover .ov{opacity:1}.ov span{padding:9px 18px;border-radius:99px;background:#fff;color:#111;font-weight:600;font-size:.85rem}
+.cat{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--a)}.pm{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.md{position:fixed;inset:0;z-index:50;background:rgba(3,4,14,.78);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}.md.on{display:flex}.mb2{max-width:560px;width:100%;max-height:88vh;overflow:auto;background:var(--bg);border:1px solid var(--line);border-radius:20px}
+.card ul{padding-left:18px;margin:8px 0 0}
+.hb{text-align:center}.hb .si{width:56px;height:56px;font-size:1rem;margin-bottom:6px}.hb:hover .si{background:var(--c);color:#fff}.hb:hover{border-color:var(--c)}
+.steps{counter-reset:s}.steps .card::after{counter-increment:s;content:"0" counter(s);position:absolute;right:18px;top:10px;font:700 2rem "Space Grotesk";opacity:.18}
+.cta{border:1px solid var(--a);border-radius:24px;padding:44px 24px;text-align:center;background:linear-gradient(135deg,rgba(139,92,255,.18),rgba(47,139,255,.12))}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}summary{cursor:pointer;font-weight:600}details p{color:var(--mut);margin:10px 0 0}
+form{display:grid;gap:12px}input,select,textarea{width:100%;padding:13px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:inherit}
+.err{color:#ff6b81;font-size:.8rem;min-height:1em}.cg{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:var(--mut);font-size:.88rem}footer .srow{justify-content:center;margin-bottom:14px}
+.rv{opacity:0;transform:translateY(32px);transition:.8s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){#rail{display:none}.hg,.ab,.cg{grid-template-columns:1fr}.vis{height:300px}#mb{display:block}.links{display:none;position:absolute;top:62px;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--line)}nav.open .links{display:flex}}
+.svx{display:grid;grid-template-columns:300px 1fr;gap:24px}.svt{display:flex;flex-direction:column;gap:8px}
+.svt button{display:flex;gap:12px;align-items:center;text-align:left;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:inherit;font-weight:600;cursor:pointer;transition:.25s}
+.svt button:hover{border-color:var(--a);transform:translateX(4px)}.svt button.on{background:var(--g);border-color:transparent;color:#fff}
+.svp{border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--card);min-height:380px;animation:fi .4s}@keyframes fi{from{opacity:0;transform:translateY(10px)}}
+.svp .ic{font-size:2.4rem}.svp p,.svp li{color:var(--mut)}.svp h4{margin:0;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--a)}.svp .kf{list-style:none;padding:0;margin:10px 0 0}.svp li{margin-bottom:6px}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:22px 0}
+@media(max-width:900px){.svx{grid-template-columns:1fr}.svt{flex-direction:row;overflow-x:auto;padding-bottom:6px}.svt button{white-space:nowrap}.sc{grid-template-columns:1fr}}
+.gt{background-image:linear-gradient(90deg,#8b5cff,#2f8bff,#22d3ee,#8b5cff);background-size:200% auto;animation:sh 6s linear infinite}@keyframes sh{to{background-position:200% center}}
+#pg{position:fixed;top:0;left:0;height:3px;width:0;background:var(--g);z-index:40}
+.hero{position:relative}.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 20%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 35%,#000 20%,transparent 70%);opacity:.6;z-index:-1;pointer-events:none}
+.hg .vis{transition:transform .25s ease-out}.vis:hover .orbit,.vis:hover .nd span{animation-play-state:paused}
+.orbit.o2r{inset:105px;animation-duration:18s;animation-direction:reverse}.dt{position:absolute;width:10px;height:10px;margin:-5px;border-radius:50%;background:#8b5cff;box-shadow:0 0 14px #8b5cff,0 0 26px #8b5cff}
+.nd span:hover{border-color:#8b5cff;box-shadow:0 0 24px rgba(139,92,255,.6)}
+@media(max-width:900px){.orbit.o2r{inset:110px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div id="glow"></div><div id="pg"></div>
+<nav id="nav"><div class="w"><a class="logo" href="#top"><b>AI</b>gnite</a>
+<div class="links"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+<div style="display:flex;gap:8px"><a class="btn p" href="#contact">Hire Me</a><button id="mb" aria-label="Menu">☰</button></div></div></nav>
+
+<header class="hero" id="top"><div class="w hg"><div>
+<div class="badge"><i></i>Open for new projects</div>
+<h1>Transforming Ideas Into Digital Experiences With <span class="gt">Technology &amp; AI.</span></h1>
+<p class="type">I build <span id="tw"></span></p>
+<p class="d">From stunning websites and creative designs to AI automation and search optimization, I help individuals and businesses build a powerful digital presence.</p>
+<div class="row"><a class="btn p" href="#services">Explore My Services</a><a class="btn" href="#work">View My Portfolio</a><a class="btn" href="#contact">Hire Me</a><a class="btn" href="#ai">Create Your Portfolio with AI</a></div>
+</div>
+<div class="vis"><div class="ring"></div><div class="ring r2"></div><div class="core">AI</div><div class="orbit o2r"><i class="dt" style="top:0;left:50%"></i><i class="dt" style="top:100%;left:50%;background:#22d3ee;box-shadow:0 0 14px #22d3ee,0 0 26px #22d3ee"></i></div><div class="orbit"><div class="nd" style="top:0;left:50%"><span>⚡ Next.js</span></div><div class="nd" style="top:50%;left:100%"><span>✦ AI Agents</span></div><div class="nd" style="top:100%;left:50%"><span>🎨 Canva Design</span></div><div class="nd" style="top:50%;left:0"><span>🔍 SEO · AEO · GEO</span></div></div>
+<div class="fc" style="left:0;bottom:2%">Websites · Design · AI · SEO<small>All under one roof</small></div>
+<div class="fc" style="right:0;top:2%;animation-delay:-3s">Fast &amp; modern<small>Built to convert</small></div></div></div></header>
+
+<div class="mq"><div id="mq"></div></div>
+
+<section id="about"><div class="w"><div class="ab">
+<div class="rv"><div class="av"><div>👤</div></div><p style="text-align:center;color:var(--mut);font-size:.85rem">Add your photo here</p></div>
+<div class="rv"><h2>About <span class="gt">Me</span></h2>
+<p class="sub">Placeholder text: replace “Your Name” and this story with your own.</p>
+<p>Hi, I’m <b>Your Name</b>, a web developer, designer and AI enthusiast. I help businesses and individuals turn ideas into fast, beautiful and search-friendly digital products.</p>
+<div class="tl"><div><b>Started learning web development</b><span>Add your year and story</span></div><div><b>Expanded into design, WordPress and SEO</b><span>Add your milestone</span></div><div><b>Now building AI-powered solutions</b><span>Add your current focus</span></div></div>
+<div id="sk"></div></div></div></div></section>
+
+<section id="services"><div class="w"><h2 class="rv">My <span class="gt">Services</span></h2><p class="sub rv">Everything you need to grow online, in one place.</p><div class="svx rv"><div class="svt" id="svt"></div><div class="svp" id="svp"></div></div></div></section>
+
+<section id="work"><div class="w"><h2 class="rv">Featured <span class="gt">Projects</span></h2>
+<p class="sub rv"><span class="tag demo">DEMO CONTENT</span> Sample entries until you add your real work.</p>
+<div class="chips" id="chips"></div><div class="grid" id="proj"></div></div></section>
+
+
+
+<section><div class="w"><h2 class="rv">Why Work <span class="gt">With Me?</span></h2><p class="sub">&nbsp;</p>
+<div class="grid"><div class="card"><div class="ic">🎯</div><h3>Results-focused</h3><p>Every page is designed to bring inquiries, not just look good.</p></div><div class="card"><div class="ic">🧰</div><h3>One-stop shop</h3><p>Design, development, AI and SEO under one roof.</p></div><div class="card"><div class="ic">🌍</div><h3>Global-ready</h3><p>Clear communication and timelines for international clients.</p></div></div></div></section>
+
+<section id="process"><div class="w"><h2 class="rv">My Working <span class="gt">Process</span></h2><p class="sub">&nbsp;</p>
+<div class="grid steps"><div class="card"><h3>Discover</h3><p>Goals, audience and scope.</p></div><div class="card"><h3>Design</h3><p>Wireframes and visual direction.</p></div><div class="card"><h3>Develop</h3><p>Build, test and optimize.</p></div><div class="card"><h3>Launch &amp; support</h3><p>Deploy, train and maintain.</p></div></div></div></section>
+
+<section><div class="w"><h2 class="rv">Client <span class="gt">Testimonials</span></h2><p class="sub"><span class="tag demo">PLACEHOLDER</span> Add real, approved reviews here.</p>
+<div class="grid"><div class="card"><p>“Placeholder testimonial text. Replace with a real client review.”</p><p><b>Client Name, Company</b></p></div><div class="card"><p>“Placeholder testimonial text. Replace with a real client review.”</p><p><b>Client Name, Company</b></p></div></div></div></section>
+
+<section id="ai"><div class="w"><div class="cta rv"><h2>Create Your Portfolio with <span class="gt">AI</span></h2>
+<p class="sub">Enter your details, pick a template, let AI write your content, then publish. The full builder (accounts, saving, export, public links) is the next phase of this project.</p><a class="btn p" href="#contact">Join the Early Access List</a></div></div></section>
+
+<section id="faq"><div class="w"><h2 class="rv">Frequently Asked <span class="gt">Questions</span></h2><p class="sub">&nbsp;</p>
+<details><summary>What services do you offer?</summary><p>Web development, WordPress, UI development, Canva and graphic design, AI automation, and SEO including AEO and GEO.</p></details>
+<details><summary>How long does a website take?</summary><p>A landing page can take a few days; larger sites take several weeks depending on scope.</p></details>
+<details><summary>Do you guarantee search rankings?</summary><p>No. Nobody can honestly guarantee rankings. I focus on proven best practices and measurable improvements.</p></details>
+<details><summary>Can I edit the site myself later?</summary><p>Yes. I can add a CMS or admin dashboard so you manage content yourself.</p></details></div></section>
+
+<section id="contact"><div class="w"><div class="cg"><div class="rv"><h2>Let’s Build <span class="gt">Something Great</span></h2><p class="sub">Tell me about your project, or reach me directly.</p>
+<div class="row"><a class="btn p" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a><a class="btn" href="mailto:you@example.com">Email</a></div></div>
+<form id="f" class="rv" novalidate>
+<div><input id="n" placeholder="Full name"><div class="err" id="en"></div></div>
+<div><input id="e" type="email" placeholder="Email"><div class="err" id="ee"></div></div>
+<select id="s"><option>Web Development</option><option>WordPress</option><option>Canva &amp; Graphic Design</option><option>AI Automation</option><option>SEO</option></select>
+<select id="bu"><option>Under $500</option><option>$500–$2,000</option><option>$2,000+</option></select>
+<div><textarea id="d" rows="4" placeholder="Project description"></textarea><div class="err" id="ed"></div></div>
+<button class="btn p" type="submit">Send Inquiry</button>
+<p class="sub" style="margin:0;font-size:.8rem">Demo form: it opens your email app. Replace you@example.com with your email.</p></form></div></div></section>
+
+<footer><div class="w"><div class="srow" id="fs"></div>© 2026 AIgnite Digital · <a href="#top">Back to top</a></div></footer>
+
+<script>
+var $=function(i){return document.getElementById(i)};
+var ic=function(p,f){return '<svg viewBox="0 0 24 24" width="20" height="20" '+(f?'fill="currentColor"':'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"')+' aria-hidden="true">'+p+'</svg>'};
+var S=[["Instagram",ic('<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>'),"https://instagram.com/","#e1306c"],["YouTube",ic('<path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>'),"https://youtube.com/","#ff0033"],["X (Twitter)",ic('<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>',1),"https://x.com/","#1d9bf0"],["LinkedIn",ic('<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>'),"https://linkedin.com/","#0a66c2"],["GitHub",ic('<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>'),"https://github.com/ruqia17","#8b5cff"],["WhatsApp",ic('<path d="M7.9 20A9 9 0 1 1 4 16.1L2 22Z"/><path d="M9 9.5c.3 2.3 2.2 4.2 4.5 4.8l1.2-1.2-1.8-1-.8.8a4 4 0 0 1-1.6-1.6l.8-.8-1-1.8z"/>'),"https://wa.me/","#25d366"]];
+function ico(s){return '<a class="si" style="--c:'+s[3]+'" href="'+s[2]+'" target="_blank" rel="noopener" title="'+s[0]+'" aria-label="'+s[0]+'">'+s[1]+'</a>'}
+$("fs").innerHTML=S.map(ico).join("");
+var T="HTML5 · CSS3 · JavaScript · React.js · Next.js · Tailwind CSS · Bootstrap · WordPress · Elementor · Figma · Canva · Supabase · AI Agents · SEO".split(" · ");
+$("mq").innerHTML=T.concat(T).map(function(t){return "<span>"+t+"</span>"}).join("");
+$("sk").innerHTML='<p style="color:var(--mut);font-size:.8rem;margin:0 0 8px">Skill levels are editable placeholders</p>'+[["Web Development",90],["UI &amp; Graphic Design",85],["AI &amp; Automation",80],["SEO / AEO / GEO",85]].map(function(k){return '<div>'+k[0]+'<div class="bar"><i style="--w:'+k[1]+'%"></i></div></div>'}).join("");
+var V=[["💻","Web Development","HTML, CSS, JavaScript, React.js, Next.js, landing pages, redesigns and bug fixing.","React · Next.js · JS"],["🧩","CSS Frameworks &amp; UI","Tailwind, Bootstrap, Figma to HTML/React/Next.js and custom layouts.","Tailwind · Bootstrap · Figma"],["📝","WordPress","Elementor sites, blogs, WooCommerce stores, speed optimization and maintenance.","WordPress · Elementor"],["🎨","Canva &amp; Graphic Design","Social posts, banners, flyers, CVs, presentations and brand identity.","Canva · Branding"],["🤖","AI Solutions &amp; Automation","AI agents, chatbots, workflow automation and AI API integration.","AI Agents · Automation"],["🔍","SEO, AEO &amp; GEO","Technical, on-page and local SEO, audits, schema and AI search visibility. No ranking guarantees.","SEO · Schema · AEO · GEO"]];
+V=[["💻","Web Development","Fast, modern websites built with clean code.",["Responsive on every device","Fast loading and SEO-ready","Easy to maintain and scale"],["HTML5","CSS3","JavaScript","React.js","Next.js"],["Landing pages","Business websites","Redesigns and bug fixes"]],["🧩","CSS Frameworks &amp; UI","Pixel-perfect interfaces from your Figma designs.",["Consistent design system","Reusable UI components","Accurate Figma to code"],["Tailwind CSS","Bootstrap","Figma"],["Figma to HTML, React or Next.js","Custom layouts","UI component sets"]],["📝","WordPress","Easy-to-manage websites and online stores.",["Edit content yourself","Optimized speed","Ongoing maintenance"],["WordPress","Elementor","WooCommerce"],["Business or portfolio site","Blog or online store","Speed optimization"]],["🎨","Canva &amp; Graphic Design","Designs that make your brand look professional.",["Consistent brand look","Editable Canva templates","Ready for every platform"],["Canva","Brand identity"],["Social media posts","Flyers, banners and CVs","Logo and brand kit"]],["🤖","AI Solutions &amp; Automation","Save time with smart assistants and workflows.",["Automate repetitive tasks","Instant customer replies","Custom to your business"],["AI APIs","Chatbots","Automation tools"],["AI chatbot or agent","Workflow automation","AI feature integration"]],["🔍","SEO, AEO &amp; GEO","Be found on Google and in AI answers. No ranking guarantees.",["Stronger technical foundation","Clear, structured content","Visible to AI search tools"],["Schema markup","Keyword research","Site audits"],["SEO audit report","On-page and technical fixes","FAQ and schema markup"]]];
+function li(x){return "<li>"+x+"</li>"}
+function sp(i){var v=V[i];[].forEach.call($("svt").children,function(b,j){b.classList.toggle("on",j===i)});$("svp").style.animation="none";void $("svp").offsetWidth;$("svp").style.animation="";
+$("svp").innerHTML='<div class="ic">'+v[0]+'</div><h3 style="font-size:1.5rem;margin:6px 0">'+v[1]+'</h3><p>'+v[2]+'</p><div class="sc"><div><h4>Key benefits</h4><ul class="kf">'+v[3].map(li).join("")+'</ul></div><div><h4>Deliverables</h4><ul class="kf">'+v[5].map(li).join("")+'</ul></div></div><div class="pm">'+v[4].map(function(t){return '<span class="tag" style="margin:0">'+t+'</span>'}).join("")+'</div><div class="row" style="margin:22px 0 0"><a class="btn p" href="#contact">Get a Quote</a></div>'}
+$("svt").innerHTML=V.map(function(v,i){return '<button onclick="sp('+i+')"><span>'+v[0]+'</span>'+v[1]+'</button>'}).join("");sp(0);
+var P=[["Startup Landing Page","HTML/CSS","HTML5, CSS3","A responsive landing page built with clean, semantic HTML and CSS.","Flexbox and Grid layout|Mobile-first design|Fast loading"],["Interactive Task App","JavaScript","JavaScript, DOM","A task manager with add, edit, filter and delete actions.","Dynamic UI updates|Form validation|Clean modular code"],["Analytics Dashboard","React.js","React.js","A dashboard UI built from reusable React components.","Reusable components|State management|Chart-ready layout"],["SaaS Marketing Site","Next.js","Next.js, Tailwind CSS","A fast, SEO-ready multi-page website with server rendering.","Dynamic routes|Meta tags and sitemap|API routes"],["Pricing Page Kit","Tailwind CSS","Tailwind CSS","A modern pricing and features page styled with utility classes.","Dark mode ready|Responsive cards|Consistent design tokens"],["Admin Panel Template","Bootstrap","Bootstrap 5","An admin layout with sidebar, tables and forms.","Responsive grid|Ready-made components|Easy customization"],["Business Website","WordPress","WordPress, Elementor","A business website with services, blog and contact pages.","Elementor layouts|Speed optimization|Easy content editing"],["Social Media Kit","Canva Designs","Canva","An Instagram and Facebook post set with a consistent brand look.","Editable templates|Brand colors and fonts|Multiple sizes"],["Brand Identity Kit","Graphic Design","Canva","Logo, color palette, flyer and business card concepts.","Logo variations|Style guide|Print-ready files"],["Support Chatbot","AI Agents &amp; Automation","AI API, automation tools","An AI chatbot that answers common customer questions.","Custom knowledge base|Lead capture|Workflow automation"],["Local SEO Audit","SEO","SEO audit tools","A sample audit covering technical, on-page and local SEO.","Keyword research|Technical checklist|Action plan"],["FAQ and Schema Pack","AEO &amp; GEO","Schema.org, FAQ content","Structured FAQ content and schema markup for AI search visibility.","FAQ schema|Clear answer-style content|Entity and brand markup"]];
+var H={"HTML/CSS":["#f97316","#ec4899","🌐"],"JavaScript":["#eab308","#f97316","⚙️"],"React.js":["#06b6d4","#3b82f6","⚛️"],"Next.js":["#334155","#8b5cf6","▲"],"Tailwind CSS":["#06b6d4","#10b981","🎨"],"Bootstrap":["#7c3aed","#4f46e5","🅱️"],"WordPress":["#2563eb","#0ea5e9","📝"],"Canva Designs":["#8b5cf6","#06b6d4","🖌️"],"Graphic Design":["#ec4899","#f43f5e","✨"],"AI Agents &amp; Automation":["#8b5cf6","#22d3ee","🤖"],"SEO":["#16a34a","#14b8a6","📈"],"AEO &amp; GEO":["#6366f1","#a855f7","🔍"]};
+function mk(p){var h=H[p[1]];return '<div class="mk" style="--h:linear-gradient(135deg,'+h[0]+','+h[1]+')"><div class="bw"><div class="tb"><i></i><i></i><i></i></div><div class="ln" style="width:60%"></div><div class="ln" style="width:40%"></div><div class="bk"><b></b><b></b><b></b></div></div><div class="em">'+h[2]+'</div><span class="tag'+(p[5]?'':' demo')+'" style="position:absolute;left:12px;top:12px;margin:0;background:rgba(0,0,0,.5);color:#fff">'+(p[5]?'MY CANVA WORK':'DEMO')+'</span></div>'}
+function card(p){return '<div class="card pc">'+(p[5]?'<a href="'+p[5]+'" target="_blank" rel="noopener" style="display:block">'+mk(p)+'</a>':mk(p))+'<div class="pb"><div class="cat">'+p[1]+'</div><h3>'+p[0]+'</h3><p>'+p[3]+'</p><ul class="kf">'+p[4].split("|").map(function(f){return "<li>"+f+"</li>"}).join("")+'</ul><div class="pm">'+p[2].split(", ").map(function(t){return '<span class="tag" style="margin:0">'+t+'</span>'}).join("")+'</div><div class="row" style="margin:16px 0 0">'+(p[5]?'<a class="btn p" style="padding:9px 16px" href="'+p[5]+'" target="_blank" rel="noopener">View on Canva ↗</a>':'<a class="btn p" style="padding:9px 16px" href="#work">Live Demo</a><a class="btn" style="padding:9px 16px" href="#work">GitHub</a>')+'</div></div></div>'}
+var ch=$("chips"),pr=$("proj");
+function show(c){pr.innerHTML=P.filter(function(p){return c==="All"||p[1]===c}).map(function(p){return card(p,P.indexOf(p))}).join("");
+[].forEach.call(ch.children,function(b){b.classList.toggle("on",b.innerHTML===c)})}
+["All"].concat(P.map(function(p){return p[1]}).filter(function(v,i,a){return a.indexOf(v)===i})).forEach(function(c){var b=document.createElement("button");b.className="chip";b.innerHTML=c;b.onclick=function(){show(c)};ch.appendChild(b)});show("All");
+var W=["Websites","AI Agents","Brands","Search Visibility","Digital Products"],wi=0,ci=0,del=0;
+(function ty(){var w=W[wi];ci+=del?-1:1;$("tw").textContent=w.slice(0,ci);var t=70;if(!del&&ci===w.length){del=1;t=1400}else if(del&&ci===0){del=0;wi=(wi+1)%W.length;t=300}setTimeout(ty,t)})();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+document.addEventListener("mousemove",function(e){var g=$("glow");g.style.left=e.clientX+"px";g.style.top=e.clientY+"px";var c=e.target.closest&&e.target.closest(".card");if(c){var r=c.getBoundingClientRect();c.style.setProperty("--mx",e.clientX-r.left+"px");c.style.setProperty("--my",e.clientY-r.top+"px")}});
+$("mb").onclick=function(){$("nav").classList.toggle("open")};
+var vs=document.querySelector(".vis"),hr=document.querySelector(".hero");
+if(vs&&!matchMedia("(prefers-reduced-motion:reduce)").matches){hr.addEventListener("mousemove",function(e){var r=vs.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;vs.style.transform="perspective(900px) rotateY("+x*14+"deg) rotateX("+-y*14+"deg)"});hr.addEventListener("mouseleave",function(){vs.style.transform=""})}
+window.addEventListener("scroll",function(){var h=document.documentElement;$("pg").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"});
+document.querySelectorAll(".links a").forEach(function(a){a.onclick=function(){$("nav").classList.remove("open")}});
+$("f").onsubmit=function(ev){ev.preventDefault();var n=$("n").value.trim(),e=$("e").value.trim(),d=$("d").value.trim(),ok=true;
+$("en").textContent=n?"":(ok=false,"Please enter your name");
+$("ee").textContent=/^\S+@\S+\.\S+$/.test(e)?"":(ok=false,"Enter a valid email");
+$("ed").textContent=d.length>=10?"":(ok=false,"Please describe your project (10+ characters)");
+if(!ok)return;
+var b="Name: "+n+"\nEmail: "+e+"\nService: "+$("s").value+"\nBudget: "+$("bu").value+"\n\n"+d;
+location.href="mailto:you@example.com?subject="+encodeURIComponent("Project inquiry")+"&body="+encodeURIComponent(b)};
+</script></body></html>
