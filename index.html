@@ -28,7 +28,8 @@ nav .w{display:flex;align-items:center;justify-content:space-between;height:62px
 #mb{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:6px 12px;font-size:1.1rem}
 .btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.92rem;border:1px solid var(--line);transition:.25s;color:var(--tx);background:var(--card);cursor:pointer;font-family:inherit}
 .btn:hover{transform:translateY(-3px);border-color:var(--a);box-shadow:0 10px 30px rgba(139,92,255,.3)}
-.btn.p{background:var(--g);border:0;color:#fff}
+.btn.p{border:1px solid var(--a)}
+.btn:active,.btn:focus{background:var(--g);border-color:transparent;color:#fff;outline:0}
 .si{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:.8rem;transition:.25s}
 .si:hover{background:var(--c);border-color:var(--c);color:#fff;transform:translateY(-4px) scale(1.08);box-shadow:0 8px 24px var(--c)}
 .srow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
@@ -84,13 +85,14 @@ h2{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 8px}.sub{color:var(--mut);mar
 .cta{border:1px solid var(--a);border-radius:24px;padding:44px 24px;text-align:center;background:linear-gradient(135deg,rgba(139,92,255,.18),rgba(47,139,255,.12))}
 details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}summary{cursor:pointer;font-weight:600}details p{color:var(--mut);margin:10px 0 0}
 form{display:grid;gap:12px}input,select,textarea{width:100%;padding:13px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:inherit}
+select option{background:#1b1f4d;color:#eef0ff}select option:checked{background:#8b5cff;color:#fff}@media(prefers-color-scheme:light){select option{background:#fff;color:#12163a}}
 .err{color:#ff6b81;font-size:.8rem;min-height:1em}.cg{display:grid;grid-template-columns:1fr 1fr;gap:30px}
 footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:var(--mut);font-size:.88rem}footer .srow{justify-content:center;margin-bottom:14px}
 .rv{opacity:0;transform:translateY(32px);transition:.8s}.rv.in{opacity:1;transform:none}
 @media(max-width:900px){#rail{display:none}.hg,.ab,.cg{grid-template-columns:1fr}.vis{height:300px}#mb{display:block}.links{display:none;position:absolute;top:62px;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--line)}nav.open .links{display:flex}}
 .svx{display:grid;grid-template-columns:300px 1fr;gap:24px}.svt{display:flex;flex-direction:column;gap:8px}
 .svt button{display:flex;gap:12px;align-items:center;text-align:left;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:inherit;font-weight:600;cursor:pointer;transition:.25s}
-.svt button:hover{border-color:var(--a);transform:translateX(4px)}.svt button.on{background:var(--g);border-color:transparent;color:#fff}
+.svt button:hover{border-color:var(--a);transform:translateX(4px)}.svt button.on{background:rgba(139,92,255,.12);border-color:var(--a);color:var(--tx)}.svt button:active,.svt button:focus{background:var(--g);border-color:transparent;color:#fff;outline:0}
 .svp{border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--card);min-height:380px;animation:fi .4s}@keyframes fi{from{opacity:0;transform:translateY(10px)}}
 .svp .ic{font-size:2.4rem}.svp p,.svp li{color:var(--mut)}.svp h4{margin:0;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--a)}.svp .kf{list-style:none;padding:0;margin:10px 0 0}.svp li{margin-bottom:6px}
 .sc{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:22px 0}
@@ -120,7 +122,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:v
 .lk{font-weight:600;color:#a78bfa}.lk:hover{text-decoration:underline}.lk.g{color:var(--mut)}.nl{color:var(--mut)}
 @property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
 .xtabs{display:inline-flex;flex-wrap:wrap;gap:4px;padding:5px;border-radius:99px;border:1px solid var(--line);background:var(--card);margin-bottom:26px}
-.xtb{padding:8px 18px;border-radius:99px;border:0;background:none;color:var(--mut);font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;transition:.25s}.xtb small{opacity:.7;margin-left:4px}.xtb:hover{color:var(--tx)}.xtb.on{background:var(--g);color:#fff}
+.xtb{padding:8px 18px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--mut);font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;transition:.25s}.xtb small{opacity:.7;margin-left:4px}.xtb:hover{color:var(--tx)}.xtb:hover{border-color:var(--a)}.xtb.on{background:rgba(139,92,255,.12);border-color:var(--a);color:var(--tx)}.xtb:active,.xtb:focus{background:var(--g);border-color:transparent;color:#fff;outline:0}
 #proj{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
 .xc{position:relative;border-radius:24px;padding:2px;background:var(--line);transition:transform .25s ease-out,box-shadow .3s;cursor:pointer}
 @keyframes xup{from{opacity:0;translate:0 18px}}@keyframes xrot{to{--ang:360deg}}
@@ -134,6 +136,10 @@ footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:v
 .xb{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;color:var(--mut);font-size:.85rem;font-weight:600}
 .xg{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.35s}.xc:hover .xg{background:var(--g);border-color:transparent;color:#fff;transform:rotate(-45deg)}
 @media(min-width:760px){.xc.mine{grid-column:span 2}}
+.xc:hover{background:var(--a);animation:none;box-shadow:none}.xc.mine:hover{background:rgba(34,197,94,.9)}
+.xc:hover .xi::before{opacity:0}.xc:hover .xe{background:rgba(139,92,255,.16);transform:none;box-shadow:none}.xc:hover .xg{background:none;border-color:var(--line);color:inherit;transform:none}
+.xc:active,.xc.sel,.xc.mine:active,.xc.mine.sel{background:conic-gradient(from var(--ang),#8b5cff,#22d3ee,#2f8bff,#8b5cff);animation:xrot 3s linear infinite;box-shadow:0 20px 60px rgba(139,92,255,.28)}
+.xc:active .xi::before,.xc.sel .xi::before{opacity:1}.xc:active .xe,.xc.sel .xe{background:var(--g);box-shadow:0 0 34px rgba(139,92,255,.6)}.xc:active .xg,.xc.sel .xg{background:var(--g);border-color:transparent;color:#fff}
 #pv{position:fixed;left:0;top:0;width:250px;padding:16px;border-radius:18px;border:1px solid var(--a);background:rgba(10,12,32,.96);color:#eef0ff;pointer-events:none;opacity:0;transition:opacity .25s;z-index:20;box-shadow:0 24px 70px rgba(139,92,255,.4)}
 #pv.on{opacity:1}#pv p{margin:6px 0 0;font-size:.82rem;color:#b9bff0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .xs{width:46px;height:46px;border-radius:14px;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:10px;box-shadow:0 0 24px rgba(139,92,255,.55)}
@@ -160,7 +166,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:v
 <p class="d">From stunning websites and creative designs to AI automation and search optimization, I help individuals and businesses build a powerful digital presence.</p>
 <div class="row"><a class="btn p" href="#services">Explore My Services</a><a class="btn" href="#work">View My Portfolio</a><a class="btn" href="#contact">Hire Me</a><a class="btn" href="#ai">Create Your Portfolio with AI</a></div>
 </div>
-<div class="vis"><div class="ring"></div><div class="ring r2"></div><div class="core">AI</div><div class="orbit o2r"><i class="dt" style="top:0;left:50%"></i><i class="dt" style="top:100%;left:50%;background:#22d3ee;box-shadow:0 0 14px #22d3ee,0 0 26px #22d3ee"></i></div><div class="orbit"><div class="nd" style="top:0;left:50%"><span>⚡ Next.js</span></div><div class="nd" style="top:50%;left:100%"><span>✦ AI Agents</span></div><div class="nd" style="top:100%;left:50%"><span>🎨 Canva Design</span></div><div class="nd" style="top:50%;left:0"><span>🔍 SEO · AEO · GEO</span></div></div>
+<div class="vis"><div class="ring"></div><div class="ring r2"></div><div class="core">AI</div><div class="orbit o2r"><i class="dt" style="top:0;left:50%"></i><i class="dt" style="top:100%;left:50%;background:#22d3ee;box-shadow:0 0 14px #22d3ee,0 0 26px #22d3ee"></i></div><div class="orbit"><div class="nd" style="top:0;left:50%"><span>⚡ Web Dev</span></div><div class="nd" style="top:50%;left:100%"><span>✦ AI Agents</span></div><div class="nd" style="top:100%;left:50%"><span>🎨 Canva Design</span></div><div class="nd" style="top:50%;left:0"><span>🔍 SEO · AEO · GEO</span></div></div>
 
 </div></div></header>
 
@@ -209,7 +215,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:v
 <select id="bu"><option>Under $500</option><option>$500–$2,000</option><option>$2,000+</option></select>
 <div><textarea id="d" rows="4" placeholder="Project description"></textarea><div class="err" id="ed"></div></div>
 <button class="btn p" type="submit">Send Inquiry</button>
-<p class="sub" id="fm" style="margin:0;font-size:.8rem">Sending opens your email app. If it doesn’t open, use the WhatsApp, Gmail or Copy buttons.</p></form></div></div></section>
+<p class="sub" id="fm" style="margin:0;font-size:.8rem">Sending opens your email app. If it doesn’t open, message me on WhatsApp instead.</p></form></div></div></section>
 
 <footer><div class="w"><div class="srow" id="fs"></div><p style="margin:0 0 12px"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ruqiaanjum026@gmail.com&amp;su=Project%20inquiry" target="_blank" rel="noopener" style="color:var(--tx)">ruqiaanjum026@gmail.com</a></p>© 2026 AIgnite Digital · Ruqia Anjum · <a href="#top">Back to top</a></div></footer>
 
@@ -248,8 +254,8 @@ function show(c){pr.innerHTML=P.filter(function(p){return c==="All"||p[1]===c}).
 ["All"].concat(P.map(function(p){return p[1]}).filter(function(v,i,a){return a.indexOf(v)===i})).forEach(function(c){var b=document.createElement("button");b.className="chip";b.innerHTML=c;b.onclick=function(){show(c)};ch.appendChild(b)});show("All");
 ch.innerHTML="";["All","Web Development","Design","AI & Testing","SEO"].forEach(function(c){var n=P.filter(function(p){return c==="All"||xG[xk(p)]===c}).length,b=document.createElement("button");b.className="xtb";b.dataset.c=c;b.innerHTML=c+"<small>"+n+"</small>";b.onclick=function(){xshow(c)};ch.appendChild(b)});xshow("All");
 document.body.insertAdjacentHTML("beforeend",'<div id="pv"></div><div id="bk"></div><aside id="dr" aria-label="Project details"></aside>');
-function xcl(){$("dr").classList.remove("on");$("bk").classList.remove("on")}
-function xopen(i){var p=P[i];$("dr").innerHTML='<button class="xx" aria-label="Close">✕</button><div class="xs">'+xE[xk(p)]+'</div>'+xbd(p)+'<div class="cat" style="margin-top:12px">'+p[1]+'</div><h2>'+p[0]+'</h2><p class="xd">'+p[3]+'</p><ul class="xf">'+p[4].split("|").map(function(f){return "<li>✓ "+f+"</li>"}).join("")+'</ul><div>'+xtg(p)+'</div><div style="margin-top:16px">'+(p[6]?'<span class="nl">Website no longer live</span>':'<a class="lk" href="#work">Live demo (add link)</a><a class="lk" href="#work" style="color:var(--mut)">GitHub (add link)</a>')+'</div>';$("dr").classList.add("on");$("bk").classList.add("on");$("pv").classList.remove("on")}
+function xcl(){document.querySelectorAll(".xc.sel").forEach(function(c){c.classList.remove("sel")});$("dr").classList.remove("on");$("bk").classList.remove("on")}
+function xopen(i){var p=P[i];document.querySelectorAll(".xc.sel").forEach(function(c){c.classList.remove("sel")});var cc=document.querySelector('.xc[data-i="'+i+'"]');if(cc)cc.classList.add("sel");$("dr").innerHTML='<button class="xx" aria-label="Close">✕</button><div class="xs">'+xE[xk(p)]+'</div>'+xbd(p)+'<div class="cat" style="margin-top:12px">'+p[1]+'</div><h2>'+p[0]+'</h2><p class="xd">'+p[3]+'</p><ul class="xf">'+p[4].split("|").map(function(f){return "<li>✓ "+f+"</li>"}).join("")+'</ul><div>'+xtg(p)+'</div><div style="margin-top:16px">'+(p[6]?'<span class="nl">Website no longer live</span>':'<a class="lk" href="#work">Live demo (add link)</a><a class="lk" href="#work" style="color:var(--mut)">GitHub (add link)</a>')+'</div>';$("dr").classList.add("on");$("bk").classList.add("on");$("pv").classList.remove("on")}
 $("bk").onclick=xcl;$("dr").onclick=function(e){if(e.target.closest(".xx"))xcl()};document.addEventListener("keydown",function(e){if(e.key==="Escape")xcl()});
 pr.onclick=function(e){var c=e.target.closest(".xc");if(c)xopen(+c.dataset.i)};
 var pv=$("pv"),px=0,py=0,pcx=0,pcy=0,pcur=-1;
