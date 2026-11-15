@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin — AIgnite Digital</title>
+<style>
+:root{color-scheme:dark;--bg:#050612;--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.14);--tx:#eef0ff;--mut:#a2a9d6;--a:#8b5cff;--g:linear-gradient(135deg,#8b5cff,#2f8bff 60%,#22d3ee);--op:#1b1f4d;--opt:#eef0ff;--err:#ff7a93;--ok:#35d07f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root{color-scheme:light;--bg:#f3f4ff;--card:rgba(255,255,255,.9);--line:rgba(20,25,70,.16);--tx:#12163a;--mut:#555d8a;--op:#fff;--opt:#12163a;--err:#d6264e;--ok:#14935a}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+[hidden]{display:none!important}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:1.5rem;margin:0}
+.gt{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.box{border:1px solid var(--line);border-radius:20px;background:var(--card);padding:24px}
+#login{max-width:420px;margin:12vh auto 0;padding:0 16px}
+#login form{display:grid;gap:12px;margin-top:16px}
+input,select{width:100%;font:inherit;color:var(--tx);padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:transparent}
+input:focus,select:focus{outline:0;border-color:var(--a);box-shadow:0 0 0 3px rgba(139,92,255,.22)}
+select option{background:var(--op);color:var(--opt)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 18px;border-radius:12px;border:1px solid var(--a);background:var(--card);color:var(--tx);font:inherit;font-weight:600;cursor:pointer;text-decoration:none;transition:.2s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active,.btn:focus{background:var(--g);border-color:transparent;color:#fff;outline:0}
+.btn.sm{padding:6px 12px;font-size:.85rem;border-color:var(--line)}
+.btn.del:hover{border-color:var(--err);color:var(--err)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.msg{min-height:1.3em;font-size:.9rem;color:var(--err);margin:0}
+.msg.ok{color:var(--ok)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.tab{padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--mut);font:inherit;font-size:.88rem;cursor:pointer;transition:.2s}
+.tab:hover{border-color:var(--a);color:var(--tx)}
+.tab.on{background:rgba(139,92,255,.12);border-color:var(--a);color:var(--tx)}
+.tab:active,.tab:focus{background:var(--g);border-color:transparent;color:#fff;outline:0}
+.list{display:grid;gap:12px}
+.card{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:18px}
+.card.new{border-left:4px solid var(--a)}
+.row1{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start}
+.name{font-weight:700;font-size:1.05rem;overflow-wrap:anywhere}
+.when{color:var(--mut);font-size:.82rem}
+.meta{color:var(--mut);font-size:.9rem;margin:4px 0 10px;overflow-wrap:anywhere}
+.meta a{color:inherit}
+.text{white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 14px}
+.act{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.act select{width:auto;padding:6px 10px;font-size:.85rem;border-radius:10px}
+.empty{color:var(--mut);text-align:center;padding:40px 10px}
+@media(max-width:480px){.box{padding:18px}.card{padding:14px}}
+</style></head>
+<body>
+
+<main id="login">
+  <div class="box">
+    <h1>Admin <span class="gt">Login</span></h1>
+    <form id="lf" novalidate>
+      <input id="em" type="email" placeholder="Email" autocomplete="username">
+      <input id="pw" type="password" placeholder="Password" autocomplete="current-password">
+      <button class="btn" type="submit" id="lb">Sign in</button>
+      <p class="msg" id="lm"></p>
+    </form>
+  </div>
+</main>
+
+<main id="app" class="wrap" hidden>
+  <div class="top">
+    <h1>Inquiries <span class="gt" id="cnt"></span></h1>
+    <div class="act"><button class="btn sm" id="rf" type="button">Refresh</button><button class="btn sm" id="lo" type="button">Sign out</button></div>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <p class="msg" id="am"></p>
+  <div class="list" id="list"></div>
+</main>
+
+<script>
+(function(){
+var SB_URL="https://jydrhycfjayxdsrckyos.supabase.co",SB_KEY="sb_publishable_fuxP1B9rC2afYWsC81FZvA_J6Qcg7K_";
+var tok=null,rows=[],filter="all",STATUS=["new","read","replied","archived"];
+function $(i){return document.getElementById(i)}
+function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+function store(t){try{if(t)sessionStorage.setItem("aid_t",t);else sessionStorage.removeItem("aid_t")}catch(e){}}
+function stored(){try{return sessionStorage.getItem("aid_t")}catch(e){return null}}
+
+function api(path,opt){
+  opt=opt||{};
+  opt.headers=Object.assign({apikey:SB_KEY,Authorization:"Bearer "+tok,"Content-Type":"application/json"},opt.headers||{});
+  return fetch(SB_URL+path,opt).then(function(r){
+    if(r.status===401){logout("Session expired. Please sign in again.");throw new Error("401")}
+    if(!r.ok)throw new Error(String(r.status));
+    return r.status===204||opt.method==="PATCH"||opt.method==="DELETE"?null:r.json();
+  });
+}
+function logout(m){tok=null;store(null);$("app").hidden=true;$("login").hidden=false;$("lm").textContent=m||"";$("pw").value=""}
+function showApp(){$("login").hidden=true;$("app").hidden=false;load()}
+
+$("lf").onsubmit=function(ev){
+  ev.preventDefault();
+  var em=$("em").value.trim(),pw=$("pw").value;
+  if(!em||!pw){$("lm").textContent="Enter email and password.";return}
+  var b=$("lb");b.disabled=true;b.textContent="Signing in...";$("lm").textContent="";
+  fetch(SB_URL+"/auth/v1/token?grant_type=password",{method:"POST",headers:{apikey:SB_KEY,"Content-Type":"application/json"},body:JSON.stringify({email:em,password:pw})})
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d}})})
+  .then(function(x){
+    if(!x.ok||!x.d.access_token){$("lm").textContent="Wrong email or password.";return}
+    tok=x.d.access_token;store(tok);showApp();
+  })
+  .catch(function(){$("lm").textContent="Could not connect. Check your internet and try again."})
+  .finally(function(){b.disabled=false;b.textContent="Sign in";$("pw").value=""});
+};
+$("lo").onclick=function(){logout("")};
+$("rf").onclick=function(){load()};
+
+function load(){
+  $("am").textContent="";$("am").className="msg";
+  api("/rest/v1/inquiries?select=*&order=created_at.desc").then(function(d){rows=d||[];render()})
+  .catch(function(e){if(e.message!=="401")$("am").textContent="Could not load inquiries."});
+}
+function count(s){return s==="all"?rows.length:rows.filter(function(r){return r.status===s}).length}
+function render(){
+  $("cnt").textContent="("+rows.length+")";
+  var t=$("tabs");t.textContent="";
+  ["all"].concat(STATUS).forEach(function(s){
+    var b=el("button","tab"+(filter===s?" on":""),(s==="all"?"All":s.charAt(0).toUpperCase()+s.slice(1))+" · "+count(s));
+    b.type="button";b.onclick=function(){filter=s;render()};t.appendChild(b);
+  });
+  var list=$("list");list.textContent="";
+  var shown=rows.filter(function(r){return filter==="all"||r.status===filter});
+  if(!shown.length){list.appendChild(el("div","empty",rows.length?"Nothing in this tab.":"No inquiries yet."));return}
+  shown.forEach(function(r){list.appendChild(card(r))});
+}
+function card(r){
+  var c=el("article","card"+(r.status==="new"?" new":""));
+  var h=el("div","row1");
+  h.appendChild(el("div","name",r.name));
+  h.appendChild(el("div","when",new Date(r.created_at).toLocaleString()));
+  c.appendChild(h);
+  var m=el("div","meta");
+  var a=el("a",null,r.email);a.href="mailto:"+r.email;m.appendChild(a);
+  m.appendChild(document.createTextNode(" · "+(r.service||"—")+" · "+(r.budget||"—")));
+  c.appendChild(m);
+  c.appendChild(el("p","text",r.message));
+  var act=el("div","act");
+  var sel=el("select");
+  STATUS.forEach(function(s){var o=el("option",null,s.charAt(0).toUpperCase()+s.slice(1));o.value=s;if(s===r.status)o.selected=true;sel.appendChild(o)});
+  sel.onchange=function(){
+    var v=sel.value;
+    api("/rest/v1/inquiries?id=eq."+encodeURIComponent(r.id),{method:"PATCH",headers:{Prefer:"return=minimal"},body:JSON.stringify({status:v})})
+    .then(function(){r.status=v;render()})
+    .catch(function(e){if(e.message!=="401"){$("am").textContent="Could not update status.";sel.value=r.status}});
+  };
+  act.appendChild(sel);
+  var rep=el("a","btn sm","Reply by email");rep.href="mailto:"+r.email+"?subject="+encodeURIComponent("Re: your project inquiry");act.appendChild(rep);
+  var del=el("button","btn sm del","Delete");del.type="button";
+  del.onclick=function(){
+    if(!confirm("Delete this inquiry permanently?"))return;
+    api("/rest/v1/inquiries?id=eq."+encodeURIComponent(r.id),{method:"DELETE",headers:{Prefer:"return=minimal"}})
+    .then(function(){rows=rows.filter(function(x){return x.id!==r.id});render()})
+    .catch(function(e){if(e.message!=="401")$("am").textContent="Could not delete."});
+  };
+  act.appendChild(del);
+  c.appendChild(act);
+  return c;
+}
+
+var t0=stored();if(t0){tok=t0;showApp()}
+})();
+</script>
+</body></html>
