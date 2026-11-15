@@ -236,7 +236,7 @@ html{-webkit-text-size-adjust:100%}img,svg,video{max-width:100%}
 <section id="contact"><div class="w"><div class="ca rv">
 <div class="info"><h2>Let’s Build <span class="gt">Something Great</span></h2><p>Tell me about your project, or reach me directly.</p>
 <a class="btn" href="https://wa.me/923364150052" target="_blank" rel="noopener">WhatsApp</a><p class="ph">📱 +92 336 4150052</p></div>
-<form id="f" novalidate>
+<form id="f" novalidate><input id="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 <div class="f2">
 <div><div class="fl"><input id="n" placeholder=" " autocomplete="name"><label for="n">Full name</label></div><div class="err" id="en"></div></div>
 <div><div class="fl"><input id="e" type="email" placeholder=" " autocomplete="email"><label for="e">Email</label></div><div class="err" id="ee"></div></div>
@@ -247,7 +247,7 @@ html{-webkit-text-size-adjust:100%}img,svg,video{max-width:100%}
 </div>
 <div><div class="fl"><textarea id="d" rows="4" placeholder=" "></textarea><label for="d">Project description</label></div><div class="err" id="ed"></div></div>
 <button class="btn" type="submit">Send Inquiry</button>
-<p class="sub" id="fm" style="margin:0;font-size:.8rem">Sending opens your email app. If it doesn’t open, message me on WhatsApp instead.</p></form></div></div></section>
+<p class="sub" id="fm" style="margin:0;font-size:.8rem">Your inquiry is saved securely. Prefer a quick chat? Message me on WhatsApp.</p></form></div></div></section>
 
 <footer><div class="w"><div class="srow" id="fs"></div><p style="margin:0 0 12px"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ruqiaanjum026@gmail.com&amp;su=Project%20inquiry" target="_blank" rel="noopener" style="color:var(--tx)">ruqiaanjum026@gmail.com</a></p>© 2026 AIgnite Digital · Ruqia Anjum · <a href="#top">Back to top</a></div></footer>
 
@@ -307,11 +307,16 @@ var vs=document.querySelector(".vis"),hr=document.querySelector(".hero");
 if(vs&&!matchMedia("(prefers-reduced-motion:reduce)").matches){hr.addEventListener("mousemove",function(e){var r=vs.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;vs.style.transform="perspective(900px) rotateY("+x*14+"deg) rotateX("+-y*14+"deg)"});hr.addEventListener("mouseleave",function(){vs.style.transform=""})}
 window.addEventListener("scroll",function(){var h=document.documentElement;$("pg").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"});
 document.querySelectorAll(".links a").forEach(function(a){a.onclick=function(){$("nav").classList.remove("open")}});
+var SB_URL="https://jydrhycfjayxdsrckyos.supabase.co",SB_KEY="sb_publishable_fuxP1B9rC2afYWsC81FZvA_J6Qcg7K_";
 $("f").onsubmit=function(ev){ev.preventDefault();var n=$("n").value.trim(),e=$("e").value.trim(),d=$("d").value.trim(),ok=true;
-$("en").textContent=n?"":(ok=false,"Please enter your name");
+$("en").textContent=n.length>=2?"":(ok=false,"Please enter your name");
 $("ee").textContent=/^\S+@\S+\.\S+$/.test(e)?"":(ok=false,"Enter a valid email");
 $("ed").textContent=d.length>=10?"":(ok=false,"Please describe your project (10+ characters)");
 if(!ok)return;
-var b="Name: "+n+"\nEmail: "+e+"\nService: "+$("s").value+"\nBudget: "+$("bu").value+"\n\n"+d;
-location.href="mailto:ruqiaanjum026@gmail.com?subject="+encodeURIComponent("Project inquiry")+"&body="+encodeURIComponent(b);$("fm").textContent="If your email app did not open, please email ruqiaanjum026@gmail.com or message +92 336 4150052 on WhatsApp."};
+if($("hp").value){$("fm").textContent="Thank you! Your inquiry was sent.";return}
+var btn=$("f").querySelector("button[type=submit]");btn.disabled=true;btn.textContent="Sending...";
+fetch(SB_URL+"/rest/v1/inquiries",{method:"POST",headers:{"apikey":SB_KEY,"Content-Type":"application/json","Prefer":"return=minimal"},body:JSON.stringify({name:n,email:e,service:$("s").value,budget:$("bu").value,message:d})})
+.then(function(r){if(!r.ok)throw new Error(r.status);$("fm").textContent="Thank you! Your inquiry was sent. I will get back to you by email.";$("f").reset()})
+.catch(function(){$("fm").textContent="Sorry, something went wrong. Please message me on WhatsApp at +92 336 4150052 or email ruqiaanjum026@gmail.com."})
+.finally(function(){btn.disabled=false;btn.textContent="Send Inquiry"})};
 </script></body></html>
